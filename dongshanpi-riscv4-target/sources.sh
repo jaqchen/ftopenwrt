@@ -27,8 +27,8 @@ openwrt_config() {
 	cp -v -f "${TARGETDIR}/dongshanpi.config" .config ; rval=$?
 	[ ${rval} -ne 0 ] && return 4
 
-	# expand .config via make V=s -j1 oldconfig
-	make V=s -j1 oldconfig
+	# expand .config via make V=s -j1 defconfig
+	make V=s -j1 defconfig
 	return $?
 }
 
