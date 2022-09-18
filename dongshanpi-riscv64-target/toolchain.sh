@@ -12,7 +12,7 @@ fi
 
 # setting PATH with toolchain path is not needed
 # for building openwrt-22.03, but set it anyway
-export PATH="${RISCV64_TC}/bin:/usr/sbin:/sbin:/sbin:/bin"
+export PATH="${RISCV64_TC}/bin:${FTOPDIR}/tools:/usr/sbin:/sbin:/sbin:/bin"
 
 # remove no longer needed variable
 unset RISCV64_TC
