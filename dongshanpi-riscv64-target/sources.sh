@@ -3,6 +3,23 @@
 # Created by yejq.jiaqiang@gmail.com
 # 2022/08/28
 
+# configure for linux/riscv64
+board_dtb_config() {
+	make ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- dongshanpi_defconfig
+	return $?
+}
+
+board_dtb_build() {
+	# this will build linux-5.4/arch/risvc/boot/dts/sunxi/board.dtb
+	make ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- dtbs
+	return $?
+}
+
+board_dtb_clean() {
+	make ARCH=riscv CROSS_COMPILE=riscv64-unknown-linux-gnu- clean
+	return $?
+}
+
 openwrt_config() {
 	if [ -x "${FTOPDIR}/download/symlink.sh" ] ; then
 		# if download directory exists, create
@@ -42,5 +59,7 @@ openwrt_clean() {
 	return $?
 }
 
+register_source linux-5.4 \
+	board_dtb_config board_dtb_build board_dtb_clean
 register_source openwrt \
 	openwrt_config openwrt_build openwrt_clean
