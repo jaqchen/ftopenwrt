@@ -29,7 +29,7 @@ openwrt_config() {
 
 	# remove files first before re-creating symlink
 	rm -rf files ; sync
-	local TARGETDIR="${FTOPDIR}/dongshanpi-riscv4-target"
+	local TARGETDIR="${FTOPDIR}/dongshanpi-riscv64-target"
 	ln -sv "${TARGETDIR}/extra-files" files
 	local rval=$?
 	[ ${rval} -ne 0 ] && return 1
