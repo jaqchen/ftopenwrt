@@ -1,0 +1,7 @@
+*.img
+/.tag-built
+/.tag-configured
+/image/Vboot.fex
+/image/Vrootfs.fex
+/image/boot.fex
+/image/rootfs.fex
