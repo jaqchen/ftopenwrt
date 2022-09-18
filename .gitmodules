@@ -1,0 +1,8 @@
+[submodule "openwrt-22.03"]
+	path = openwrt-22.03
+	url = https://github.com/jaqchen/openwrt-riscv64.git
+	branch = master
+[submodule "linux-5.4"]
+	path = linux-5.4
+	url = https://github.com/jaqchen/awd1-linux-5.4.git
+	branch = master
